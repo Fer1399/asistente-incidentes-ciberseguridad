@@ -1,5 +1,12 @@
 # Cambios
 
+## Sin publicar
+
+- Documentación: nuevo [10 · Resultados](docs/10-resultados.md), con una prueba real
+  (ransomware con `qwen2.5:14b`) y la copia de seguridad explicada paso a paso.
+- Extensión: el resumen de la importación usa singular y plural correctamente
+  ("1 nuevo", "2 nuevos").
+
 ## 1.0.0 · 10/11/2026
 
 Primera versión completa.

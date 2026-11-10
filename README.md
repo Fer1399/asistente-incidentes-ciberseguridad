@@ -228,7 +228,8 @@ Selecciona texto en cualquier web, botón derecho → **Analizar con el asistent
 
 ### Copia de seguridad
 Exporta e importa un `.zip` con incidentes, documentos y adjuntos. Importar **fusiona** con
-lo que ya hay, sin borrar nada.
+lo que ya hay, sin borrar nada, y antes guarda una copia del estado actual. Explicación
+completa, con capturas y cómo volver atrás: [docs/10-resultados.md](docs/10-resultados.md#6-copia-de-seguridad-exportar-e-importar).
 
 ---
 
@@ -294,6 +295,9 @@ asistente-incidentes-ciberseguridad/
 | Evaluación de respuestas | Calidad de las respuestas del modelo real en 15 incidentes tipo | `scripts\evaluar.bat` · [docs/09-evaluacion.md](docs/09-evaluacion.md) |
 | GitHub Actions | Pruebas y comprobaciones de la extensión en cada cambio | Automático |
 
+Resultados de una prueba real con `qwen2.5:14b` (respuesta a un ransomware en 14,3 s, con
+las 8 técnicas MITRE verificadas): [docs/10-resultados.md](docs/10-resultados.md).
+
 ---
 
 ## Documentación
@@ -309,6 +313,7 @@ asistente-incidentes-ciberseguridad/
 | [07 · Fichas, memoria, informes y copias](docs/07-incidentes.md) | Ciclo de vida de un incidente, plazo de la AEPD, memoria, informes y copias de seguridad |
 | [08 · La extensión de Chrome](docs/08-extension.md) | Instalación, cada pestaña, menú contextual y prueba automática |
 | [09 · Evaluar las respuestas](docs/09-evaluacion.md) | Batería de casos de prueba y métricas |
+| [10 · Resultados](docs/10-resultados.md) | Prueba real con capturas y la copia de seguridad (exportar e importar) explicada paso a paso |
 | [Fuentes recomendadas](docs/fuentes-recomendadas.md) | Guías oficiales para la base de conocimiento |
 | [Registro de decisiones](docs/decisiones.md) | Cada decisión de diseño y su motivo |
 | [Seguridad](SECURITY.md) | Modelo de amenazas y medidas |

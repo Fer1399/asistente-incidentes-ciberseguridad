@@ -88,10 +88,12 @@ export async function vistaAjustes(contenedor) {
     try {
       const r = await subirFichero("/copia", fichero);
       const s = r.resumen;
+      const n = (cifra, singular, plural) => `${cifra} ${cifra === 1 ? singular : plural}`;
       vaciar(resultadoCopia, h("div", { class: "banner banner-info" }, icono("escudo", 18),
         h("div", {}, h("b", {}, `Copia de ${r.manifiesto.equipo} importada`),
-          `${s.incidentes_nuevos} incidentes nuevos, ${s.incidentes_actualizados} actualizados, ${s.incidentes_sin_cambios} sin cambios, `,
-          `${s.documentos_nuevos} documentos y ${s.adjuntos_nuevos} adjuntos. `,
+          `Incidentes: ${n(s.incidentes_nuevos, "nuevo", "nuevos")}, ${n(s.incidentes_actualizados, "actualizado", "actualizados")}, `,
+          `${s.incidentes_sin_cambios} sin cambios. Documentos: ${n(s.documentos_nuevos, "nuevo", "nuevos")}. `,
+          `Adjuntos: ${n(s.adjuntos_nuevos, "nuevo", "nuevos")}. `,
           r.avisos.join(" "), h("br"), h("span", { class: "ayuda" }, `Copia previa guardada en data\\copias\\${r.copia_previa}`))));
       comprobarSalud();
     } catch (error) {
