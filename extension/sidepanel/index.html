@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asistente de Incidentes</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header class="cabecera">
+      <div class="marca">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="marca-textos">
+          <span class="marca-nombre">Asistente de Incidentes</span>
+          <span class="marca-sub" id="marca-sub">Comprobando el backend…</span>
+        </div>
+      </div>
+      <button type="button" class="estado" id="estado" title="Estado del backend y de Ollama">
+        <span class="punto"></span><span id="estado-texto">…</span>
+      </button>
+    </header>
+
+    <nav class="pestanas" aria-label="Secciones">
+      <button type="button" class="pestana" data-vista="chat">Chat</button>
+      <button type="button" class="pestana" data-vista="incidentes">Incidentes</button>
+      <button type="button" class="pestana" data-vista="conocimiento">Conocimiento</button>
+      <button type="button" class="pestana" data-vista="ajustes">Ajustes</button>
+    </nav>
+
+    <main id="vista" class="vista"></main>
+  </div>
+  <div id="avisos" class="avisos" aria-live="polite"></div>
+</body>
+</html>

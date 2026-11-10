@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Asistente de Incidentes",
+  "short_name": "Incidentes",
+  "version": "1.0.0",
+  "description": "Asistente local para analizar incidentes de ciberseguridad y decidir cómo proceder. Funciona sin internet con Ollama.",
+  "minimum_chrome_version": "116",
+  "icons": {
+    "16": "iconos/icono-16.png",
+    "32": "iconos/icono-32.png",
+    "48": "iconos/icono-48.png",
+    "128": "iconos/icono-128.png"
+  },
+  "action": {
+    "default_title": "Abrir el Asistente de Incidentes",
+    "default_icon": {
+      "16": "iconos/icono-16.png",
+      "32": "iconos/icono-32.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "sidepanel/index.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["sidePanel", "contextMenus", "storage"],
+  "host_permissions": ["http://127.0.0.1/*", "http://localhost/*"],
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; connect-src http://127.0.0.1:* http://localhost:*; object-src 'none'; base-uri 'none'; form-action 'none'"
+  }
+}

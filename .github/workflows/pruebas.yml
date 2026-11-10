@@ -1,0 +1,51 @@
+# Pruebas automáticas en cada cambio que se sube a GitHub.
+# Se ejecutan en los servidores de GitHub con datos de prueba: no necesitan Ollama
+# (los modelos se sustituyen por versiones simuladas).
+name: Pruebas
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  backend:
+    name: Backend (Python)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: backend/requirements*.txt
+      - name: Instalar Tesseract (OCR)
+        run: sudo apt-get update && sudo apt-get install -y tesseract-ocr tesseract-ocr-spa
+      - name: Instalar dependencias
+        run: pip install -r backend/requirements-dev.txt
+      - name: Comprobar que la referencia MITRE está al día
+        working-directory: backend
+        run: python -m app.mitre && git diff --exit-code ../knowledge/referencia/mitre-attack.md
+      - name: Ejecutar las pruebas
+        working-directory: backend
+        run: pytest -q
+
+  extension:
+    name: Extensión (JavaScript)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Comprobar la sintaxis de los scripts
+        run: |
+          for f in extension/background.js extension/sidepanel/*.js extension/sidepanel/vistas/*.js; do
+            node --check "$f"
+          done
+      - name: Comprobar el manifiesto
+        run: python3 -c "import json; m = json.load(open('extension/manifest.json')); assert m['manifest_version'] == 3"
+      - name: Comprobar que no se usa innerHTML ni eval
+        run: "! grep -rnE 'innerHTML *=|outerHTML *=|insertAdjacentHTML|eval\\(|new Function' extension/"

@@ -1,0 +1,16 @@
+# API
+fastapi>=0.115,<1.0
+uvicorn>=0.30,<1.0
+python-multipart>=0.0.9
+pydantic-settings>=2.4,<3.0
+
+# Cliente HTTP para hablar con Ollama (solo localhost)
+httpx>=0.27,<1.0
+
+# Base vectorial local (RAG)
+chromadb>=0.5,<2.0
+
+# Lectura de PDFs, imágenes y OCR
+pymupdf>=1.25
+pillow>=10.0
+pytesseract>=0.3.10

@@ -1,0 +1,35 @@
+# Datos del usuario: nunca se suben al repositorio
+data/
+backups/
+*.zip
+
+# Paquetes descargados para instalar sin conexión
+wheels/
+
+# Entorno de Python
+backend/.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Configuración local
+backend/.env
+
+# Sistema y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Resultados de la batería de evaluación
+backend/evaluacion/resultados/
+
+# Informes generados desde la consola (contienen datos de incidentes)
+informe-*.md
+informe-*.pdf
+
+# Capturas de la prueba de la extensión
+capturas/
+capturas-e2e/
+# ...salvo las capturas de la documentación
+!docs/capturas/

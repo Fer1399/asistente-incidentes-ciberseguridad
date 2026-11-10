@@ -1,0 +1,46 @@
+From: "soporte@microsoft.com" <alerta@m1crosoft-seguridad.top>
+To: empleado@empresa.es
+Reply-To: recuperacion@correo-externo.ru
+Return-Path: <bounce@m1crosoft-seguridad.top>
+Subject: Su cuenta =?utf-8?q?ser=C3=A1?= bloqueada en 24 horas
+Date: Tue, 10 Nov 2026 09:12:00 +0100
+Message-ID: <abc123@m1crosoft-seguridad.top>
+Authentication-Results: mx.empresa.es; spf=fail
+ smtp.mailfrom=m1crosoft-seguridad.top; dkim=none; dmarc=fail
+ header.from=m1crosoft-seguridad.top
+Received:
+ from mail.m1crosoft-seguridad.top (unknown [185.220.101.45]) by mx.empresa.es
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="===============3146584874807109239=="
+
+--===============3146584874807109239==
+Content-Type: multipart/alternative;
+ boundary="===============2211380631733798573=="
+
+--===============2211380631733798573==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Estimado usuario, verifique su cuenta en https://login.m1crosoft-seguridad.to=
+p/verify antes de 24 horas.
+
+--===============2211380631733798573==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body><p>Estimado usuario,</p><p>Verifique su cuenta: <a href=3D"https:=
+//login.m1crosoft-seguridad.top/verify?u=3Dempleado">https://login.microsofto=
+nline.com</a></p></body></html>
+
+--===============2211380631733798573==--
+
+--===============3146584874807109239==
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Factura.pdf.exe"
+MIME-Version: 1.0
+
+TVqQACBmYWtl
+
+--===============3146584874807109239==--

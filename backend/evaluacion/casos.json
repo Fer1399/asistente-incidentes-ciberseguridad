@@ -1,0 +1,141 @@
+[
+  {
+    "id": "phishing-credenciales",
+    "titulo": "Phishing con credenciales introducidas (correo adjunto)",
+    "pregunta": "Un usuario ha introducido su contraseña en el enlace de este correo hace 20 minutos. ¿Cómo procedo?",
+    "adjunto": "tests/muestras/phishing-ejemplo.eml",
+    "tipo": ["phishing"],
+    "severidad": ["Alta", "Crítica"],
+    "mitre": ["T1566.002", "T1566", "T1078"],
+    "playbook": "01-phishing.md"
+  },
+  {
+    "id": "phishing-sin-clic",
+    "titulo": "Phishing recibido sin interacción",
+    "pregunta": "Varios empleados han recibido un correo que suplanta a nuestro banco pidiendo verificar la cuenta. Nadie ha pulsado el enlace. ¿Qué hago?",
+    "tipo": ["phishing"],
+    "severidad": ["Baja", "Media"],
+    "mitre": ["T1566", "T1566.002"],
+    "playbook": "01-phishing.md"
+  },
+  {
+    "id": "smishing",
+    "titulo": "SMS fraudulento de paquetería",
+    "pregunta": "Un empleado recibió en el móvil de empresa un SMS de una supuesta empresa de paquetería con un enlace para pagar 1,99 € de aduanas. Lo abrió pero no pagó. ¿Cómo actúo?",
+    "tipo": ["phishing", "smishing"],
+    "severidad": ["Baja", "Media"],
+    "mitre": ["T1566", "T1566.002", "T1566.003"],
+    "playbook": "01-phishing.md"
+  },
+  {
+    "id": "ransomware-servidor",
+    "titulo": "Ransomware en un servidor de ficheros",
+    "pregunta": "Los ficheros del servidor de ficheros tienen la extensión .lockbit y hay una nota de rescate en cada carpeta. Varios usuarios no pueden abrir sus documentos. ¿Qué hago primero?",
+    "tipo": ["ransomware"],
+    "severidad": ["Crítica", "Alta"],
+    "mitre": ["T1486", "T1490"],
+    "playbook": "02-malware-ransomware.md"
+  },
+  {
+    "id": "malware-bloqueado",
+    "titulo": "Malware detectado y bloqueado por el antivirus",
+    "pregunta": "Microsoft Defender ha detectado y puesto en cuarentena un troyano en el portátil de un comercial al abrir un adjunto. No hay más alertas. ¿Qué debo hacer?",
+    "tipo": ["malware", "troyano"],
+    "severidad": ["Baja", "Media"],
+    "mitre": ["T1204", "T1204.002", "T1566.001"],
+    "playbook": "02-malware-ransomware.md"
+  },
+  {
+    "id": "infostealer",
+    "titulo": "Infostealer ejecutado en un equipo",
+    "pregunta": "El EDR indica que se ejecutó un infostealer en el equipo de un administrativo hace dos días. Ese usuario guarda contraseñas en el navegador. ¿Cómo procedo?",
+    "tipo": ["malware", "infostealer", "credenciales", "cuenta"],
+    "severidad": ["Alta", "Crítica"],
+    "mitre": ["T1555.003", "T1539", "T1204", "T1078", "T1555"],
+    "playbook": "02-malware-ransomware.md"
+  },
+  {
+    "id": "mfa-bombing",
+    "titulo": "Bombardeo de solicitudes MFA",
+    "pregunta": "Un usuario recibió más de 30 notificaciones de MFA esta noche y aceptó una por error. ¿Qué hago?",
+    "tipo": ["cuenta comprometida", "cuenta", "mfa", "credenciales"],
+    "severidad": ["Alta", "Crítica"],
+    "mitre": ["T1621", "T1078"],
+    "playbook": "03-cuenta-comprometida.md"
+  },
+  {
+    "id": "admin-viaje-imposible",
+    "titulo": "Inicio de sesión sospechoso de un administrador",
+    "pregunta": "La cuenta de administrador del dominio ha iniciado sesión desde Rusia diez minutos después de hacerlo desde Madrid. ¿Cómo actúo?",
+    "tipo": ["cuenta comprometida", "cuenta", "acceso no autorizado"],
+    "severidad": ["Crítica"],
+    "mitre": ["T1078", "T1078.002"],
+    "playbook": "03-cuenta-comprometida.md"
+  },
+  {
+    "id": "correo-erroneo",
+    "titulo": "Datos de clientes enviados al destinatario equivocado",
+    "pregunta": "Una compañera ha enviado por error un Excel con nombres, DNI y teléfonos de 300 clientes a un proveedor externo. ¿Cómo procedo?",
+    "tipo": ["fuga", "brecha", "datos"],
+    "severidad": ["Media", "Alta"],
+    "mitre": [],
+    "playbook": "04-fuga-de-datos.md",
+    "aepd": true
+  },
+  {
+    "id": "portatil-robado",
+    "titulo": "Portátil robado sin cifrar",
+    "pregunta": "Han robado del coche el portátil de un empleado de recursos humanos. El disco no estaba cifrado y tenía nóminas. ¿Qué hago?",
+    "tipo": ["fuga", "brecha", "pérdida", "robo"],
+    "severidad": ["Alta", "Crítica"],
+    "mitre": [],
+    "playbook": "04-fuga-de-datos.md",
+    "aepd": true
+  },
+  {
+    "id": "nube-publica",
+    "titulo": "Carpeta en la nube accesible públicamente",
+    "pregunta": "Hemos descubierto que una carpeta de OneDrive con contratos de clientes estaba compartida con 'cualquiera con el enlace' desde hace tres meses. ¿Cómo actúo?",
+    "tipo": ["fuga", "exposición", "brecha", "datos"],
+    "severidad": ["Media", "Alta"],
+    "mitre": ["T1530"],
+    "playbook": "04-fuga-de-datos.md",
+    "aepd": true
+  },
+  {
+    "id": "ddos-web",
+    "titulo": "Web caída por DDoS",
+    "pregunta": "La tienda online no responde desde hace una hora; el proveedor de hosting dice que recibimos 2 millones de peticiones por minuto desde miles de IPs. ¿Qué hago?",
+    "tipo": ["ddos", "denegación"],
+    "severidad": ["Alta", "Crítica"],
+    "mitre": ["T1498", "T1499", "T1498.001", "T1499.002"],
+    "playbook": "05-ddos.md"
+  },
+  {
+    "id": "fuerza-bruta-rdp",
+    "titulo": "Fuerza bruta en RDP con acceso con éxito",
+    "pregunta": "En el registro de seguridad del servidor veo esto:\n4625 Logon Type 10 administrador desde 45.155.205.233 (x 1800 en 2 horas)\n4624 Logon Type 10 administrador desde 45.155.205.233 a las 03:12\nEl servidor tiene RDP abierto a internet. ¿Cómo procedo?",
+    "tipo": ["fuerza bruta", "acceso no autorizado", "intrusión"],
+    "severidad": ["Crítica", "Alta"],
+    "mitre": ["T1110", "T1110.001", "T1021.001", "T1133", "T1078"],
+    "playbook": "06-fuerza-bruta.md"
+  },
+  {
+    "id": "password-spraying",
+    "titulo": "Password spraying sin éxito",
+    "pregunta": "Vemos intentos de inicio de sesión fallidos contra 200 cuentas distintas de Microsoft 365, con 2 o 3 contraseñas comunes, desde la misma IP. No hay ningún acceso con éxito. ¿Qué hago?",
+    "tipo": ["fuerza bruta", "password spraying", "spraying"],
+    "severidad": ["Baja", "Media"],
+    "mitre": ["T1110.003", "T1110"],
+    "playbook": "06-fuerza-bruta.md"
+  },
+  {
+    "id": "webshell",
+    "titulo": "Webshell en un servidor web",
+    "pregunta": "Hemos encontrado un fichero shell.php que nadie creó en la carpeta de subidas del servidor web, con peticiones POST desde una IP extranjera. ¿Cómo procedo?",
+    "tipo": ["acceso no autorizado", "intrusión", "webshell"],
+    "severidad": ["Alta", "Crítica"],
+    "mitre": ["T1505.003", "T1190"],
+    "playbook": "07-acceso-no-autorizado.md"
+  }
+]
