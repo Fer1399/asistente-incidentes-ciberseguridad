@@ -1,11 +1,11 @@
-# 10 · Resultados
+# Resultados
 
 Este documento recoge pruebas reales del asistente con modelos locales: una consulta de
 **ransomware** de principio a fin, la ficha de incidente que generó, el estado de la base de
 conocimiento y, en detalle, cómo funciona la **copia de seguridad** (exportar e importar).
 
 Las capturas de los apartados 2 a 5 son de un equipo real con Ollama. Las del apartado 6
-se hicieron con la prueba automática de la extensión ([08](08-extension.md#prueba-automática-de-la-extensión)),
+se hicieron con la prueba automática de la extensión ([docs/08](docs/08-extension.md#prueba-automática-de-la-extensión)),
 que simula dos equipos con datos de ejemplo.
 
 ## Índice
@@ -45,7 +45,7 @@ que simula dos equipos con datos de ejemplo.
 ### La respuesta
 
 <p align="center">
-  <img src="capturas/resultados/ransomware-respuesta.png" width="760" alt="Respuesta del asistente a un caso de ransomware, organizada por fases">
+  <img src="docs/capturas/resultados/ransomware-respuesta.png" width="760" alt="Respuesta del asistente a un caso de ransomware, organizada por fases">
 </p>
 
 El asistente:
@@ -69,7 +69,7 @@ El asistente:
 ### Verificación MITRE ATT&CK, fuentes y tiempo
 
 <p align="center">
-  <img src="capturas/resultados/ransomware-mitre-fuentes.png" width="760" alt="Técnicas MITRE citadas, todas reconocidas, fuentes y tiempo de respuesta">
+  <img src="docs/capturas/resultados/ransomware-mitre-fuentes.png" width="760" alt="Técnicas MITRE citadas, todas reconocidas, fuentes y tiempo de respuesta">
 </p>
 
 | Resultado | Valor |
@@ -81,7 +81,7 @@ El asistente:
 Las 8 técnicas (T1204, T1059, T1547, T1021, T1003, T1486, T1490, T1567) se comprueban contra
 `knowledge/referencia/mitre-attack.md`. Si el modelo se inventara un código o un nombre, el
 recuadro mostraría *"N sin verificar"* en lugar de *"todas reconocidas"*
-(ver [05](05-asistente.md)).
+(ver [docs/05](docs/05-asistente.md)).
 
 ### Observaciones
 
@@ -96,7 +96,7 @@ El resultado es bueno, pero conviene leerlo con criterio:
 - **El análisis del alcance es breve** porque la pregunta da poca información. Con más
   datos (un log, una captura de la nota, el nombre de la extensión) la respuesta se concreta.
 
-La [batería de evaluación](09-evaluacion.md) mide esto mismo de forma sistemática en 15
+La [batería de evaluación](docs/09-evaluacion.md) mide esto mismo de forma sistemática en 15
 incidentes tipo.
 
 ---
@@ -108,7 +108,7 @@ aparece *"Guardando en INC-20261110-D18E"*). Tras revisar los pasos y escribir l
 de cierre, quedó **cerrada y guardada en la memoria** del asistente:
 
 <p align="center">
-  <img src="capturas/resultados/incidentes.png" width="760" alt="Lista de incidentes con la ficha de ransomware cerrada y en memoria">
+  <img src="docs/capturas/resultados/incidentes.png" width="760" alt="Lista de incidentes con la ficha de ransomware cerrada y en memoria">
 </p>
 
 - **Cerrado · en memoria**: si en el futuro se pregunta por un caso parecido, el asistente
@@ -117,14 +117,14 @@ de cierre, quedó **cerrada y guardada en la memoria** del asistente:
   incidente real, este dato mide el tiempo desde la detección hasta el cierre.
 
 El ciclo completo de una ficha (pasos, cronología, plazo de la AEPD, informe PDF) está en
-[07](07-incidentes.md).
+[docs/07](docs/07-incidentes.md).
 
 ---
 
 ## 4. Base de conocimiento
 
 <p align="center">
-  <img src="capturas/resultados/conocimiento.png" width="760" alt="Pestaña Conocimiento con 8 documentos, 96 fragmentos y 1 incidente">
+  <img src="docs/capturas/resultados/conocimiento.png" width="760" alt="Pestaña Conocimiento con 8 documentos, 96 fragmentos y 1 incidente">
 </p>
 
 | Documento | Fragmentos |
@@ -136,7 +136,7 @@ El ciclo completo de una ficha (pasos, cronología, plazo de la AEPD, informe PD
 
 Todo está **indexado**: el asistente busca en estos 96 fragmentos antes de cada respuesta.
 Para ampliar la base, se arrastran PDFs a esta misma pestaña. En
-[fuentes recomendadas](fuentes-recomendadas.md) hay una lista de guías oficiales que
+[fuentes recomendadas](docs/fuentes-recomendadas.md) hay una lista de guías oficiales que
 merece la pena añadir.
 
 ---
@@ -144,7 +144,7 @@ merece la pena añadir.
 ## 5. Estado del sistema
 
 <p align="center">
-  <img src="capturas/resultados/estado.png" width="760" alt="Estado: Ollama en marcha, modelos instalados, OCR disponible y conexiones externas bloqueadas">
+  <img src="docs/capturas/resultados/estado.png" width="760" alt="Estado: Ollama en marcha, modelos instalados, OCR disponible y conexiones externas bloqueadas">
 </p>
 
 Los tres modelos están instalados, el OCR está disponible y **las conexiones fuera del
@@ -164,7 +164,7 @@ carpeta `data\` del proyecto, en un solo equipo. La copia de seguridad permite:
 Está en la pestaña **Ajustes**, en el recuadro *Copia de seguridad*:
 
 <p align="center">
-  <img src="capturas/resultados/copia-tarjeta.png" width="373" alt="Recuadro de copia de seguridad con los botones Exportar e Importar">
+  <img src="docs/capturas/resultados/copia-tarjeta.png" width="373" alt="Recuadro de copia de seguridad con los botones Exportar e Importar">
 </p>
 
 ### 6.1 Qué contiene la copia
@@ -193,7 +193,7 @@ se hizo).
    descargada. Guárdala en un lugar seguro."*
 
 <p align="center">
-  <img src="capturas/resultados/copia-exportar.png" width="420" alt="Aviso de copia descargada tras pulsar Exportar">
+  <img src="docs/capturas/resultados/copia-exportar.png" width="420" alt="Aviso de copia descargada tras pulsar Exportar">
 </p>
 
 3. Mueve el `.zip` fuera del equipo: un USB cifrado, un disco externo o un almacenamiento
@@ -208,7 +208,7 @@ Exportar no cambia nada en el equipo: solo lee los datos.
 3. Al terminar, el recuadro muestra un resumen de lo que ha entrado:
 
 <p align="center">
-  <img src="capturas/resultados/copia-importar.png" width="373" alt="Resumen de la importación: incidentes, documentos y adjuntos nuevos y copia previa guardada">
+  <img src="docs/capturas/resultados/copia-importar.png" width="373" alt="Resumen de la importación: incidentes, documentos y adjuntos nuevos y copia previa guardada">
 </p>
 
 4. El asistente vuelve a indexar en segundo plano los documentos y las fichas cerradas que
@@ -225,8 +225,8 @@ referencia:
     <th>Equipo B después de importar</th>
   </tr>
   <tr>
-    <td><img src="capturas/resultados/copia-equipo-b-antes.png" width="300" alt="Equipo B sin fichas"></td>
-    <td><img src="capturas/resultados/copia-equipo-b-despues.png" width="300" alt="Equipo B con la ficha importada, cerrada y en memoria"></td>
+    <td><img src="docs/capturas/resultados/copia-equipo-b-antes.png" width="300" alt="Equipo B sin fichas"></td>
+    <td><img src="docs/capturas/resultados/copia-equipo-b-despues.png" width="300" alt="Equipo B con la ficha importada, cerrada y en memoria"></td>
   </tr>
 </table>
 
@@ -318,5 +318,5 @@ La importación devuelve en JSON el mismo resumen que muestra la extensión.
   y llevarlas a otro equipo sin perder nada.
 
 Para obtener cifras sobre muchos casos y no solo uno, ejecuta la batería de evaluación
-(`scripts\evaluar.bat`, ver [09](09-evaluacion.md)). Sus resultados pueden añadirse a este
+(`scripts\evaluar.bat`, ver [docs/09](docs/09-evaluacion.md)). Sus resultados pueden añadirse a este
 documento.

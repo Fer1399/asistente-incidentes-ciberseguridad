@@ -2,7 +2,7 @@
 
 ## Sin publicar
 
-- Documentación: nuevo [10 · Resultados](docs/10-resultados.md), con una prueba real
+- Documentación: nuevo [RESULTADOS.md](RESULTADOS.md) en la raíz, con una prueba real
   (ransomware con `qwen2.5:14b`) y la copia de seguridad explicada paso a paso.
 - Extensión: el resumen de la importación usa singular y plural correctamente
   ("1 nuevo", "2 nuevos").

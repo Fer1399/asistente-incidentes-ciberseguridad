@@ -133,7 +133,7 @@ El PDF se genera en local con PyMuPDF, en A4 y con numeración de páginas.
 ## Copia de seguridad entre equipos
 
 > Guía paso a paso con capturas, qué contiene la copia y cómo volver atrás tras importar:
-> [10 · Resultados, apartado 6](10-resultados.md#6-copia-de-seguridad-exportar-e-importar).
+> [Resultados, apartado 6](../RESULTADOS.md#6-copia-de-seguridad-exportar-e-importar).
 
 | | |
 |---|---|
